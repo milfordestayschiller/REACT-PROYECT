@@ -1,0 +1,24 @@
+.titleColor {
+    color: blue;
+}
+
+.center { 
+    height: 200px;
+    position: relative;
+  margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  .card {
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
