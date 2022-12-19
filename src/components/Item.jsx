@@ -2,6 +2,7 @@ import {useState} from 'react'
 import { Col} from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
+import "./assets/css/style.css"
 export default function Item ({productos}) {
   const [counts, setCount] = useState(0)
   const increase = () => {

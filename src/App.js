@@ -7,6 +7,9 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import ItemListContainer from './components/itemListContainer';
 import NavBarReact from './components/NavBar';
 import ItemDetailContainer from './components/itemDetailContainer';
+import Carrito from './components/Cart';
+
+import 'firebase/performance';
 
 export default function App() {
   const [count] = useState(0);
@@ -20,6 +23,7 @@ export default function App() {
     <>
    
 <BrowserRouter>
+
 <NavBarReact />
 <Routes>
  
@@ -31,8 +35,10 @@ export default function App() {
         element={<ItemListContainer/>}
     />
     <Route exact path="/ItemId/:id" element={<ItemDetailContainer/>}></Route>
+    <Route exact path="/cart" element={<Carrito/>}></Route>
+   
    </Routes>
-
+  
  </BrowserRouter>
  </>
   )

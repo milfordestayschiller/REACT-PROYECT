@@ -5,7 +5,6 @@ import ItemDetail from './ItemDetail';
 export default function ItemDetailContainer() {
     const [unicoProducto, setunicoProducto]= useState({})
     const { id } = useParams();
-    
     useEffect(() => {
         const promise = new Promise((resolve, reject) => {
           setTimeout(() => {
