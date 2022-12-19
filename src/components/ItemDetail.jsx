@@ -6,7 +6,7 @@ import { Container } from 'reactstrap';
 
 export default function ItemDetail({unicoProducto}) {
 
-  
+  console.log(unicoProducto)
   
     return (
         <>
@@ -16,7 +16,7 @@ export default function ItemDetail({unicoProducto}) {
        
           <Col className="text-center" key={unicoProducto.id}>
             <Card style={{ width: '40rem', height: '25rem' }}>
-              <Card.Img  variant="top" src={`../${unicoProducto.pictureUrl}`} style={{width:100}}/>
+              <Card.Img  variant="top" src={`../${unicoProducto.url}`} style={{width:100}}/>
               <Card.Body >
                 <Card.Title>{unicoProducto.title}</Card.Title>
                 <Card.Text>

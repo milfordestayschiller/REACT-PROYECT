@@ -3,47 +3,25 @@ import ItemList from "./ItemList"
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemDetailContainer from "./itemDetailContainer";
 export default  function ItemListContainer () {
   
-  const q = query(collection(db, "cart"),  where('categoria', 'in', ['poleras', 'blusas']));
-  
- 
   const [show, setProducto] = useState([])
   const {id} = useParams()
-useEffect(() => {
-  if(id === undefined) {
-  getDocs(q)
-  .then((productos) => {
- 
-    if(productos) {
-      const document =[];
-      productos.forEach((doc) => {
-        document.push({
-          ...doc.data(),
-          id: doc.id
-        });
-      })
-     
-      productos.stop = true; 
-     
-      setProducto(document);
-    var result2 = document
-   
-    }
-    else {
-      const result = result2.filter((productos) => {
-        console.log(id)
-        return productos.categoria === id
-        })
-        setProducto(result)
-        console.log(productos.categoria)
-        }
-   
-  })
-}
 
-},[id])
+useEffect(()=>{
+  const coleccionProductos= id ? query(collection(db, "cart"), where("categoria", "==", id)) : collection(db, "cart")
+  getDocs(coleccionProductos)
+  .then((result)=> {
+    const lista = result.docs.map((producto)=>{
+      return{
+        id:producto.id,
+        ...producto.data()
+      }
+    })
+    setProducto(lista)
+  })
+  .catch((error)=> console.log(error))
+}, [id])
 
 return (
   <>
@@ -61,8 +39,6 @@ return (
 
 
 }
-
-
 
 
 /*
