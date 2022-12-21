@@ -30,7 +30,7 @@ export default function NavBarReact(props) {
             <NavLink to="/categoryId/pareos" style={{ color: "white", textDecoration: 'none', margin: 5 }}>Pareos</NavLink>
             <NavLink   to="/categoryId/bermudas" style={{ color: "white", textDecoration: 'none', margin: 5 }}>Bermudas</NavLink>
             <NavLink to="/categoryId/swetters" style={{ color: "white", textDecoration: 'none', margin: 5 }}>Swetters</NavLink>
-            <NavLink to="/test" style={{ color: "white", textDecoration: 'none', margin: 5 }}><BsFillCartPlusFill style={{ color: "white" }} size={30} /></NavLink>
+            <NavLink to="/cart" style={{ color: "white", textDecoration: 'none', margin: 5 }}><BsFillCartPlusFill style={{ color: "white" }} size={30} /></NavLink>
       <Cart />
 
           </Nav>

@@ -1,11 +1,12 @@
 import { useContext } from 'react';
-import { Context } from './ItemDetail';
-export default function Cart (props) {
-  const value = useContext(Context)
-  console.log(value)
+
+import { CartContext } from './context/CartContext';
+export default function Cart () {
+  const {cart}= useContext(CartContext)
+  console.log(cart, 'carrito')
   return(
     <div className="div">
-<button>{value}</button>
+{cart}
     </div>
   )
 }
