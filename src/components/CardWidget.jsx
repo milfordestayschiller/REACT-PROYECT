@@ -1,8 +1,10 @@
-function CardWidget(params) {
- 
-    return(
-        <img src={"./logo.png"} height={50} alt="Logo" />
-    )
-}
 
-export default CardWidget
+import NavBarReact from "./NavBar"
+export default function CardWidget (props) {
+  return(
+    <>
+ 
+<button>{props.counts}</button>
+</>
+  )
+}

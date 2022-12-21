@@ -5,11 +5,12 @@ import React from 'react';
 import  { useEffect , useState} from 'react';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import ItemListContainer from './components/itemListContainer';
-import NavBarReact from './components/NavBar';
+
 import ItemDetailContainer from './components/itemDetailContainer';
 import Carrito from './components/Cart';
 
 import 'firebase/performance';
+import CardWidget from './components/CardWidget';
 
 export default function App() {
   const [count] = useState(0);
@@ -20,11 +21,13 @@ export default function App() {
     document.title = `You clicked ${count} times`;
   });
   return(
+   
     <>
+    
    
 <BrowserRouter>
 
-<NavBarReact />
+
 <Routes>
  
 <Route path="/" element={<ItemListContainer greeting="hola" />}></Route>
@@ -36,7 +39,7 @@ export default function App() {
     />
     <Route exact path="/ItemId/:id" element={<ItemDetailContainer/>}></Route>
     <Route exact path="/cart" element={<Carrito/>}></Route>
-   
+    <Route exact path="/test" element={<CardWidget/>}></Route>
    </Routes>
   
  </BrowserRouter>

@@ -3,13 +3,29 @@ import { Col} from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import {Link} from 'react-router-dom'
 import "./assets/css/style.css"
+
+
+
+
+
+
 export default function Item ({productos}) {
+  
+
+     
+  
+ 
   const [counts, setCount] = useState(0)
   const increase = () => {
     setCount(counts + 1);
   }
+
   return (
+  
     <>
+
+ 
+
     <Col   sm={6} md={4} className='mt-5'>
     <div className="card" style={{ width: '18rem' }}>
       <div className="card-body text-center">
@@ -27,6 +43,9 @@ export default function Item ({productos}) {
       </div>
     </div>
   </Col>
+
   </>
   )
 }
+
+
