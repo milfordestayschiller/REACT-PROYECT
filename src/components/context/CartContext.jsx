@@ -5,14 +5,27 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 export const CartProvider = ({children}) => {
-    const [cart, setCart]= useState(0);
-    const increase = () => {
-        setCart(cart + 1);
-      }
+    const [cart, setCart]= useState([]);
+        const addToCart = (item, cantidad) => {
+            setCart([...cart, {...item, cantidad}])
+           
+        }
+     
+// elimina todo del carrito
+        const removeItem = (index) => {
+            setCart(cart.filter((productos, id) => index !== id));
+        };
+        
+        const deleteItem = (id) => {
+            setCart(cart.filter((item)=> item.id !== id)
+        )}
+    
+        
+    
     return(
-        <CartContext.Provider value={{cart}}>
+        <CartContext.Provider value={{cart, addToCart, removeItem,deleteItem}}>
             {children}
-            <button className="btn btn-danger" onClick={increase}>Agregar al Carrito{cart}</button>
+           
         </CartContext.Provider>
     )
 }

@@ -1,39 +1,26 @@
-
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { Container } from 'reactstrap';
-import { useState } from 'react';
+import { useContext } from 'react';
 
 
-import { createContext } from 'react';
+
+import ItemCounter from './itemCounter';
+import { CartContext } from './context/CartContext';
 import NavBarReact from './NavBar';
-import CarWidget from './CardWidget';
 
-
-
-export const Context = createContext();
 export default function ItemDetail({unicoProducto}) {
- 
-  const [counts, setCount] = useState(0)
-    const increase = () => {
-      setCount(counts + 1);
-    }
-  console.log(unicoProducto)
+ const {addToCart} = useContext(CartContext)
+  const onAdd = (cantidad) =>{
+    
+    addToCart(unicoProducto, cantidad)
+  }
   
     return (
       
         <>
-    
-
-    <Context.Provider value={counts}>
-
-    <NavBarReact />
-  
-    </Context.Provider>
-    <CarWidget counts={counts}/>
-   
-   
+        <NavBarReact/>
      <Container className="text-center" >
       <Row xs={1} md={2} className="g-4 mt-5">
        
@@ -50,7 +37,7 @@ export default function ItemDetail({unicoProducto}) {
                </Card.Text>
               
               </Card.Body>
-              <button className="btn btn-danger" onClick={increase}>{counts}</button>
+                  <ItemCounter onAdd={onAdd} stock={10}/>
             </Card>
           </Col>
         
