@@ -3,7 +3,7 @@ import ItemList from "./ItemList"
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import NavBarReact from "./NavBar";
+
 export default  function ItemListContainer () {
   
   const [show, setProducto] = useState([])
@@ -26,7 +26,7 @@ useEffect(()=>{
 
 return (
   <>
-    <NavBarReact/>
+
    
     {show &&  <div className='container'>
 

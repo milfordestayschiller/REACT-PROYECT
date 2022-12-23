@@ -8,7 +8,7 @@ import { useContext } from 'react';
 
 import ItemCounter from './itemCounter';
 import { CartContext } from './context/CartContext';
-import NavBarReact from './NavBar';
+
 
 export default function ItemDetail({unicoProducto}) {
  const {addToCart} = useContext(CartContext)
@@ -20,7 +20,7 @@ export default function ItemDetail({unicoProducto}) {
     return (
       
         <>
-        <NavBarReact/>
+
      <Container className="text-center" >
       <Row xs={1} md={2} className="g-4 mt-5">
        

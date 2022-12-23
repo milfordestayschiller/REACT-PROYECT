@@ -3,27 +3,28 @@ import { useContext } from 'react';
 import { CartContext } from './context/CartContext';
 export default function Cart () {
  
-  const {cart,removeItem,deleteItem}= useContext(CartContext)
+  const {cart,deleteItem,clearCart}= useContext(CartContext)
  
-
+console.log(cart)
 
 
   return(
     <>
    <div>
-   {cart.slice(-1).map((productos,id) => {
+   {cart.map((productos) => {
      
         return (
-         <div className="div" key={id}>
+         <div className="div" key={productos.id}>
+          <h1>{productos.categoria}</h1>
           <h1>{productos.cantidad}</h1>
-          <button onClick={() => removeItem(id)}>Delete</button>
-          <button onClick={() => deleteItem(id)}>Delete2</button>
+          <button onClick={() => deleteItem(productos.id)}>Delete</button>
          </div>
          
-        )
-       
-       
-      })}
+         )
+         
+         
+        })}
+        <button onClick={clearCart}>Vaciar carrito</button>
  
 </div>
  

@@ -8,7 +8,7 @@ import { BsFillCartPlusFill } from "react-icons/bs";
 import { NavLink } from "react-router-dom";
 
 
-import Cart from './Cart';
+
 
 export default function NavBarReact(props) {
  
@@ -31,8 +31,6 @@ export default function NavBarReact(props) {
             <NavLink   to="/categoryId/bermudas" style={{ color: "white", textDecoration: 'none', margin: 5 }}>Bermudas</NavLink>
             <NavLink to="/categoryId/swetters" style={{ color: "white", textDecoration: 'none', margin: 5 }}>Swetters</NavLink>
             <NavLink to="/cart" style={{ color: "white", textDecoration: 'none', margin: 5 }}><BsFillCartPlusFill style={{ color: "white" }} size={30} /></NavLink>
-      <Cart />
-
           </Nav>
         </Navbar.Collapse>
       </Container>

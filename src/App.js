@@ -9,13 +9,14 @@ import Carrito from './components/Cart';
 import 'firebase/performance';
 import CardWidget from './components/CardWidget';
 import { CartProvider } from './components/context/CartContext';
+import NavBar from './components/NavBar'
 export default function App() {
  
   return(
    
     <CartProvider>
       <BrowserRouter>
-
+<NavBar/>
 
 <Routes>
  
