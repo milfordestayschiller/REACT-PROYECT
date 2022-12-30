@@ -1,10 +1,13 @@
+import { useContext } from 'react';
+import { CartContext } from './context/CartContext';
+import { BsFillCartPlusFill } from "react-icons/bs";
 
-import NavBarReact from "./NavBar"
-export default function CardWidget (props) {
+export default function CardWidget () {
+  const {cantidadTotal}= useContext(CartContext)
   return(
-    <>
- 
-<button>{props.counts}</button>
-</>
+  <>
+    <BsFillCartPlusFill style={{ color: "white" }} size={30} />
+    {cantidadTotal()}
+  </>
   )
 }

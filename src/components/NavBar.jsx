@@ -1,14 +1,9 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-
 import React from "react";
-import { BsFillCartPlusFill } from "react-icons/bs";
-
 import { NavLink } from "react-router-dom";
-
-
-
+import CardWidget from './CardWidget';
 
 export default function NavBarReact(props) {
  
@@ -30,7 +25,7 @@ export default function NavBarReact(props) {
             <NavLink to="/categoryId/pareos" style={{ color: "white", textDecoration: 'none', margin: 5 }}>Pareos</NavLink>
             <NavLink   to="/categoryId/bermudas" style={{ color: "white", textDecoration: 'none', margin: 5 }}>Bermudas</NavLink>
             <NavLink to="/categoryId/swetters" style={{ color: "white", textDecoration: 'none', margin: 5 }}>Swetters</NavLink>
-            <NavLink to="/cart" style={{ color: "white", textDecoration: 'none', margin: 5 }}><BsFillCartPlusFill style={{ color: "white" }} size={30} /></NavLink>
+            <NavLink to="/cart" style={{ color: "white", textDecoration: 'none', margin: 5 }}><CardWidget/> </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

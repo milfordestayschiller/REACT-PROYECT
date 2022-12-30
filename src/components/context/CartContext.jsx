@@ -20,10 +20,22 @@ export const CartProvider = ({children}) => {
             setCart(cart.filter((item)=> item.id !== id)
         )}
     
-        
+        const cantidadTotal= () => {
+            let cant = 0
+            cart.forEach((e) => cant += e.cantidad)
+            return cant
+        };
+
+        const cantidadT= () => {
+            let cant = 0
+            cart.forEach((e) => cant += e.price)
+            return cant
+           
+        };
+      
     
     return(
-        <CartContext.Provider value={{cart, addToCart, clearCart,deleteItem}}>
+        <CartContext.Provider value={{cart, addToCart, clearCart,deleteItem,cantidadTotal,cantidadT}}>
             {children}
            
         </CartContext.Provider>

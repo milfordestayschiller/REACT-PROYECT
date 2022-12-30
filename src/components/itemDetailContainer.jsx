@@ -16,7 +16,7 @@ export default function ItemDetailContainer() {
           id:result.id,
           ...result.data()
         })
-        console.log(...result.data())
+    
       })
 
       .catch((error)=> console.log(error))

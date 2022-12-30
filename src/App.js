@@ -10,6 +10,8 @@ import 'firebase/performance';
 import CardWidget from './components/CardWidget';
 import { CartProvider } from './components/context/CartContext';
 import NavBar from './components/NavBar'
+import Compras from './components/Compras';
+import Orders from './components/Orders';
 export default function App() {
  
   return(
@@ -30,6 +32,8 @@ export default function App() {
     <Route exact path="/ItemId/:id" element={<ItemDetailContainer/>}></Route>
     <Route exact path="/cart" element={<Carrito/>}></Route>
     <Route exact path="/test" element={<CardWidget/>}></Route>
+    <Route exact path="/compras" element={<Compras/>}></Route>
+    <Route exact path="/orders" element={<Orders/>}></Route>
    </Routes>
   
       </BrowserRouter>

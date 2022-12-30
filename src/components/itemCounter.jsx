@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 export default function ItemCounter ({onAdd, stock}) {
     const [counts, setCount] = useState(0)
     const increase = (event) => {
@@ -15,15 +16,20 @@ export default function ItemCounter ({onAdd, stock}) {
         setCount(counts - 1);
       }
     }
+    let contador = 10;
     return(
         <>
         <div>
+          <h1>Stock:{contador -counts}</h1>
         <button className="btn btn-danger" onClick={increase}>+</button>
         <span>{counts}</span>
         <button className="btn btn-danger" onClick={decrease}>-</button>
         </div>
-        <button onClick={()=>onAdd(counts) }>Agregar al Carrito</button>
+       
+        <Link to={`/cart`}> <button onClick={()=>onAdd(counts) }>Comprar</button>
+        </Link>
         </>
 
     )
 }
+

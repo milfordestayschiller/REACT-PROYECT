@@ -26,18 +26,21 @@ export default function ItemDetail({unicoProducto}) {
        
           <Col className="text-center" key={unicoProducto.id}>
             <Card style={{ width: '40rem', height: '25rem' }}>
-              <Card.Img  variant="top" src={`../${unicoProducto.url}`} style={{width:100}}/>
+              
               <Card.Body >
                 <Card.Title>{unicoProducto.title}</Card.Title>
                 <Card.Text>
                {unicoProducto.description}
                </Card.Text>
+               <Card.Img  variant="top" src={unicoProducto.url} style={{width:100}}/>
                <Card.Text>
                <h1>Precio </h1>{unicoProducto.price}
                </Card.Text>
-              
+               <Card.Text>
+           
+               </Card.Text>
               </Card.Body>
-                  <ItemCounter onAdd={onAdd} stock={10}/>
+                  <ItemCounter  onAdd={onAdd} stock={10}/>
             </Card>
           </Col>
         
