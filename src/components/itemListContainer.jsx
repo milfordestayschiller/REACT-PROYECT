@@ -4,12 +4,17 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+
+
 export default  function ItemListContainer () {
+
+  useEffect(() => {})
   
   const [show, setProducto] = useState([])
   const {id} = useParams()
 
 useEffect(()=>{
+  
   const coleccionProductos= id ? query(collection(db, "cart"), where("categoria", "==", id)) : collection(db, "cart")
   getDocs(coleccionProductos)
   .then((result)=> {

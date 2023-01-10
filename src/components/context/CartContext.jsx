@@ -7,6 +7,8 @@ export const CartContext = createContext();
 export const CartProvider = ({children}) => {
     const [cart, setCart]= useState([]);
         const addToCart = (item, cantidad) => {
+
+    
             setCart([...cart, {...item, cantidad}])
            
         }
@@ -27,9 +29,7 @@ export const CartProvider = ({children}) => {
         };
 
         const cantidadT= () => {
-            let cant = 0
-            cart.forEach((e) => cant += e.price)
-            return cant
+            return cart.reduce((acc, prod)=> acc + prod.cantidad * prod.price,0)
            
         };
       

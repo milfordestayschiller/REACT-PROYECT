@@ -12,6 +12,7 @@ import { CartProvider } from './components/context/CartContext';
 import NavBar from './components/NavBar'
 import Compras from './components/Compras';
 import Orders from './components/Orders';
+import ItemCounter from './components/itemCounter';
 export default function App() {
  
   return(
@@ -34,6 +35,7 @@ export default function App() {
     <Route exact path="/test" element={<CardWidget/>}></Route>
     <Route exact path="/compras" element={<Compras/>}></Route>
     <Route exact path="/orders" element={<Orders/>}></Route>
+    <Route exact path="/counter" element={<ItemCounter/>}></Route>
    </Routes>
   
       </BrowserRouter>

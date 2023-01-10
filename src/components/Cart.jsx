@@ -10,12 +10,17 @@ export default function Cart () {
   const {cart,deleteItem,clearCart,cantidadTotal,cantidadT}= useContext(CartContext)
  
 
-
+console.log(cart)
 
   return(
     <>
-    <h1>Precio Total: {cantidadT()}</h1>
-   <div>
+   { !cart.length 
+   ?<div>
+    <h2>Tu carrito esta vacio!</h2>
+    <Link to ='/'>Ir a comprar</Link>
+   </div>
+   :<div>
+    <h2>Tu carrito</h2>
    {cart.map((productos) => {
      
         return (
@@ -31,18 +36,19 @@ export default function Cart () {
             <Card.Img  variant="top" src={productos.url} style={{width:100}}/>
           </Card.Body>
           <Card.Text>
+             Cantidad : {productos.cantidad}
+            </Card.Text>
+          <Card.Text>
              {productos.price}
             </Card.Text>
             <Card.Text>
-              <h1 className='cantidad'>Cantidad: {cantidadTotal()}</h1>
+              Total: ${productos.price * productos.cantidad}
               
             </Card.Text>
         </Card>
         </Col>
         <button onClick={() => deleteItem(productos.id)}>Eliminar Producto</button>
-        <button onClick={clearCart}>Vaciar carrito</button>
-        <Link to={`/orders`}> <button>Generar orden de compra</button>
-        </Link>
+        
 
         </div>
         
@@ -50,10 +56,13 @@ export default function Cart () {
          
          
         })}
-        
-
+        <h1 className='cantidad'>Cantidad Total: {cantidadTotal()}</h1>
+        <h1>Precio Total: {cantidadT()}</h1>
+        <button onClick={clearCart}>Vaciar carrito</button>
+        <Link to={`/orders`}> <button>Generar orden de compra</button>
+        </Link>
  
-</div>
+</div>}
  
 
     </>
