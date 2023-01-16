@@ -38,3 +38,7 @@ margin: 0;
 .cantidad {
   font-size: 20px;
 }
+
+.texto {
+  text-align: center;
+}
