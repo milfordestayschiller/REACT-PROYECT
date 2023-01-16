@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# Free Clothes Proyect
+
+#Descripcion: Front End shopping cart developed to CoderHouse.
+
+#Functionalities: Cards are implemented, with purchase details, when entering each card detail, it is possible to add one or more items, you can delete, empty the cart and generate purchase orders.You can also filter by product categories. In addition to this the data is extracted directly from firebase as the backend of the project.
+
+#Technologies implemented: React, React Bootstrap, React Router Dom, React Icons, Firebase.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,3 +74,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
